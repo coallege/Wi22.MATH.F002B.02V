@@ -1,32 +1,130 @@
-\documentclass[12pt]{article}
-\usepackage{lingmacros}
-\usepackage{tree-dvips}
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\usepackage{cancel}
+\usepackage{pifont}
+\usepackage[margin=4em]{geometry}
+
+\def\chk{\ding{51}}
+\def\xhk{\ding{55}}
+\def\em{\hspace{1em}}
+\def\eqa{\hspace{-.5em}&=&\hspace{-.5em}}
+\def\>{\rightarrow}
+\newcommand{\subtag}[1]{\tag{\theparentequation#1}}
+
+\title{Chapter 1 Notes}
+\author{Cole Gannon}
+\date{}
+
 \begin{document}
+\maketitle
 
-\section*{Notes for My Suffering}
+\section{Linear Equations (in General)}
 
-Don't forget to include examples of topicalization.
-They look like this:
+Each variable within the equation such as $x$, $y$, or $z$, for example, must have either exponent $1$ or $0$.
 
-{\small
-\enumsentence{Topicalization from sentential subject:\\ 
-\shortex{7}{a John$_i$ [a & kltukl & [el & 
-  {\bf l-}oltoir & er & ngii$_i$ & a Mary]]}
-{ & {\bf R-}clear & {\sc comp} & 
-  {\bf IR}.{\sc 3s}-love   & P & him & }
-{John, (it's) clear that Mary loves (him).}}
-}
+\begin{itemize}
+   \item \chk\ $2x+1=7$
+   \item \xhk\ $x^{\textcolor{red}{2}}=2y$
+   \item \xhk\ $\textcolor{red}{\sin(x)}=2x$
+   \item \xhk\ $\textcolor{red}{\sqrt{x}}=3x+1$
+\end{itemize}
 
-\subsection*{How to handle topicalization}
+\begin{center}
+   \textbf{Def}: Linear Equation\\
+   $a_1v_1+a_2v_2+a_3v_3+\cdots+a_nv_n=b$\\
+   \hspace{-5em}\textit{where:}\\
+   \vspace{-2em}
+   \begin{align*}
+      \forall a&\in\mathbb{R}\\
+      b&\in\mathbb{R}
+   \end{align*}
 
-{}
+   \textbf{Def}: System of Linear Equations / Linear System / L.S.\\
+   A collection of one or more linear equations.\\
+   (One linear equation only would be kinda silly, though it technically qualifies.)
+\end{center}
 
-\subsection*{Mood}
+\subsection{Solutions}
 
-Mood changes when there is a topic, as well as when
-there is WH-movement.  \emph{Irrealis} is the mood when
-there is a non-subject topic or WH-phrase in Comp.
-\emph{Realis} is the mood when there is a subject topic
-or WH-phrase.
+\subsubsection{A Solution}
+\begin{center}
+   \textbf{Def}: \textit{A} Solution of a Linear System\\
+   Given a L.S. in $x_1, x_2, x_3 \cdots x_n$ or $\mathbb{R}^n$,
+   \textit{A} solution is an n-tuple corresponding to each respective variable.
+   $\left(S_1, S_2, S_3, \cdots, S_n\right)$,
+\end{center}
+Let's work an example:
+\begin{flalign}
+   \left\{
+      \begin{matrix}
+           x+2y\eqa5
+         \\2x+y\eqa10
+      \end{matrix}
+   \right\}
+   \subtag{e,f}
+   \begin{array}{ll}
+      x=5-2y
+      \> 2[x=5-2y]+y=10
+      \> \cancel{10}-2y+y=\cancel{10}
+      \> \mathbf{y=0}
+      \\
+      x=5-2[y=0]
+      \> \mathbf{x=5}
+      \\
+      $The solution is\ $ (x,y) = (5,0)
+   \end{array}
+   &&
+\end{flalign}
+
+\subsubsection{Solution Sets}
+\begin{center}
+   \textbf{Def}: The Solution Set of a Linear System\\
+   The set of all possible solutions for a given L.S.
+\end{center}
+In the example in 1.1.1, there was only one possible solution: ()
+
+\subsubsection{The Existence Question}
+
+\subsection{Determination}
+\begin{flalign*}
+   \left\{
+      \begin{matrix}
+           2x+y\eqa3-x
+         \\x-y \eqa5
+         \\x+2y\eqa1
+      \end{matrix}
+   \right\}
+   &
+   \hspace{2em}
+   \begin{array}{ll}
+      \text{Linear System of\ } x \text{\ and\ } y\text{.}\\
+      % So when in a math environment, turns out that the dollar sign undoes it.
+      % Both the above \text and below $ are valid ways to do this.
+      % :scrumge:
+      $Overdetermined; three equations when there are only two variables.$
+   \end{array}
+   \\
+   \\
+   \left\{
+      \vspace{.5em}
+      \begin{matrix}
+           x-y+z  \eqa 1
+         \\2x+y-z \eqa 3
+      \end{matrix}
+      \vspace{.5em}
+   \right\}
+   &
+   \hspace{2em}
+   \begin{array}{ll}
+        $Linear System of\ $ x $,\ $ y $, and\ $ z$.$
+      \\$Underdetermined; two equations when there are three variables.$
+   \end{array}
+   &&
+\end{flalign*}
+
+Keep in mind that determination alone is not a sufficient indicator of the existence of a solution. We'll touch on this more in 
 
 \end{document}
