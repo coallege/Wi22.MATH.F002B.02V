@@ -2,3 +2,4 @@
 
 *Linear Algebra*
 
+And well, I ended up dropping it because I suck.
